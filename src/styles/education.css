@@ -3,11 +3,27 @@
 ===================== */
 
 .education {
-  max-width: 720px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Card */
+/* =====================
+   Education Layout
+   (FORCED 2-column on desktop)
+===================== */
+
+.education-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 force side-by-side */
+  gap: 2rem;
+}
+
+/* =====================
+   Education Card
+===================== */
+
 .education-card {
+    
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: 16px;
@@ -27,7 +43,10 @@
   border-radius: 16px 0 0 16px;
 }
 
-/* Header */
+/* =====================
+   Header
+===================== */
+
 .education-header {
   display: flex;
   justify-content: space-between;
@@ -52,14 +71,32 @@
   font-weight: 600;
 }
 
-/* Institution */
+/* =====================
+   Institution
+===================== */
+
 .education-institute {
   margin: 1rem 0 1.5rem;
   font-size: 0.95rem;
   color: var(--text-secondary);
 }
 
-/* Coursework */
+.education-institute a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-light);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.education-institute a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* =====================
+   Coursework
+===================== */
+
 .education-meta span {
   font-size: 0.85rem;
   font-weight: 600;
@@ -76,14 +113,13 @@
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
 }
-.education-institute a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--border-light);
-  transition: color 0.25s ease, border-color 0.25s ease;
-}
 
-.education-institute a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+/* =====================
+   Mobile Fallback
+===================== */
+
+@media (max-width: 768px) {
+  .education-layout {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
 }

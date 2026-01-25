@@ -30,12 +30,12 @@ const Hero = () => {
             </a>
 
             <a
-              href={process.env.PUBLIC_URL + "/resume.pdf"}
+              href={process.env.PUBLIC_URL + "resume.pdf"}
               target="_blank"
               rel="noreferrer"
             >
               <i className="fa-solid fa-file-lines"></i>
-              Resume
+               Resume
             </a>
           </div>
         </div>

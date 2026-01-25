@@ -31,9 +31,9 @@
 }
 
 .about-image img {
-  width: 340px;
+  width: 540px;
   height: 420px;
   object-fit: cover;
-  border-radius: 20% 80% 60% 40% / 30% 40% 60% 70%;
+  /* border-radius: 20% 80% 60% 40% / 30% 40% 60% 70%; */
   border: 3px solid var(--border-light);
 }

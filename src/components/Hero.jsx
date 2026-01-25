@@ -32,9 +32,9 @@ const Hero = () => {
 
         {/* Right side */}
         <div className="hero-image">
-          <img src="profile.jpg" alt="Nabis Shrestha" />
-        </div>
-      </div>
+  <img src={process.env.PUBLIC_URL + '/profile.jpg'} alt="Nabis Shrestha" />
+</div>
+
     </section>
   );
 };

@@ -44,11 +44,6 @@ body {
    Main Container
 ===================== */
 
-.main {
-  position: relative;
-  scroll-snap-type: y proximity;
-  overflow-x: hidden;
-}
 
 /* =====================
    Sections

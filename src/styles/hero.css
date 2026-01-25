@@ -71,9 +71,16 @@
   color: var(--accent);
 }
 
+.hero-image {
+  display: flex;
+  justify-content: center;
+  transform: translateX(40px);
+}
+
+
 .hero-image img {
-  width: 320px;
-  height: 380px;
+  width: 380px;
+  height: 420px;
   object-fit: cover;
 
   border-radius: 58% 42% 30% 70% / 60% 30% 70% 40%;

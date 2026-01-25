@@ -16,6 +16,7 @@
   gap: 3rem;
   align-items: center;
 }
+
 .hero::after {
   content: "";
   position: absolute;

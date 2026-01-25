@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
 import useScrollReveal from "./hooks/useScrollReveal";
 
 const App = () => {
@@ -15,16 +16,12 @@ const App = () => {
     <>
       <Navbar />
 
-      {/* Scroll container */}
       <main className="main">
         <Hero />
         <About />
         <Skills />
-        <Education />
-        {/* Divider between Projects & Education */}
-        <div className="section-divider" />
-
         <Projects />
+        <Education />
         <Contact />
       </main>
 

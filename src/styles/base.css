@@ -1,19 +1,23 @@
-:root {
-  /* Backgrounds */
-  --bg-main: #0f172a; /* deep slate */
-  --bg-card: #111827; /* card surface */
+/* =====================
+   CSS Variables
+===================== */
 
-  /* Text */
-  --text-primary: #e5e7eb; /* off-white */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #111827;
+
+  --text-primary: #e5e7eb;
   --text-secondary: #9ca3af;
 
-  /* Borders */
   --border-light: #1f2937;
 
-  /* Accent */
-  --accent: #3b82f6; /* professional blue */
+  --accent: #3b82f6;
   --accent-soft: rgba(59, 130, 246, 0.15);
 }
+
+/* =====================
+   Reset & Base
+===================== */
 
 * {
   box-sizing: border-box;
@@ -36,16 +40,72 @@ body {
   line-height: 1.6;
 }
 
+/* =====================
+   Main Container
+===================== */
+
 .main {
+  position: relative;
   scroll-snap-type: y proximity;
+  overflow-x: hidden;
 }
+
+/* =====================
+   Sections
+===================== */
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* =====================
+   Links
+===================== */
 
 a {
   color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 a:hover {
   color: var(--accent);
+}
+
+/* =====================
+   Cards
+===================== */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+}
+
+/* =====================
+   Mobile
+===================== */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
 }

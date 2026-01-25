@@ -1,0 +1,89 @@
+/* =====================
+   Education Section
+===================== */
+
+.education {
+  max-width: 720px;
+}
+
+/* Card */
+.education-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 2.2rem;
+  position: relative;
+}
+
+/* Accent bar */
+.education-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 16px 0 0 16px;
+}
+
+/* Header */
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.education-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Status badge */
+.education-status {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Institution */
+.education-institute {
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Coursework */
+.education-meta span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.education-meta ul {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.education-meta li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+.education-institute a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-light);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.education-institute a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

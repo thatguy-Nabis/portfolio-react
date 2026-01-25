@@ -13,7 +13,8 @@ const skillGroups = [
     skills: [
       { name: "Java", icon: "devicon-java-plain colored" },
       { name: "Python", icon: "devicon-python-plain colored" },
-      { name: "C", icon: "devicon-c-plain colored" }
+      { name: "C", icon: "devicon-c-plain colored" },
+      { name: "MySQL", icon: "devicon-mysql-plain colored" }
     ]
   },
   {
@@ -25,7 +26,6 @@ const skillGroups = [
     ]
   }
 ];
-
 
 const Skills = () => {
   return (

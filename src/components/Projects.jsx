@@ -1,28 +1,35 @@
-import ProjectCard from "./ProjectCard";
-
 const projects = [
   {
-    title: "Personal Portfolio",
-    image: "/projects/portfolio.png",
-    tools: [
-      "devicon-react-original",
-      "devicon-javascript-plain",
-      "devicon-css3-plain"
-    ],
+    title: "Chess Arena",
     description:
-      "A modern, responsive personal portfolio designed to showcase my work and skills."
+      "A two-player chess game built in Java with MySQL for user management and match persistence.",
+    tech: ["Java", "MySQL"],
+    image: "/projects/chess-arena.png",
   },
   {
-    title: "Student Management System",
-    image: "/projects/student-system.png",
-    tools: [
-      "devicon-java-plain",
-      "devicon-mysql-plain"
-    ],
+    title: "ZipIt",
     description:
-      "A CRUD-based system for managing student records with a structured backend."
-  }
+      "An intelligent image editor using machine learning for image processing and optimization.",
+    tech: ["React", "PHP", "MySQL", "Python", "ML"],
+    image: "/projects/zipit.png",
+  },
+  {
+    title: "Kriativity",
+    description:
+      "An online art gallery platform with a recommendation algorithm to personalize content.",
+    tech: ["PHP", "MySQL"],
+    image: "/projects/kriativity.png",
+  },
 ];
+
+const techIcons = {
+  Java: "devicon-java-plain colored",
+  MySQL: "devicon-mysql-plain colored",
+  React: "devicon-react-original colored",
+  PHP: "devicon-php-plain colored",
+  Python: "devicon-python-plain colored",
+  ML: "devicon-tensorflow-original colored",
+};
 
 const Projects = () => {
   return (
@@ -31,7 +38,30 @@ const Projects = () => {
 
       <div className="projects-layout">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <div className="project-card" key={index}>
+            {/* Image */}
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
+            </div>
+
+            {/* Content */}
+            <div className="project-body">
+              <h3>{project.title}</h3>
+
+              <div className="project-tech">
+                {project.tech.map((tech, i) => (
+                  <div className="project-tech-item" key={i}>
+                    <i className={techIcons[tech]}></i>
+                    <span>{tech}</span> {/* hidden by CSS */}
+                  </div>
+                ))}
+              </div>
+
+              <p className="project-description">
+                {project.description}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
     </section>

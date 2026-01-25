@@ -16,16 +16,26 @@ const Hero = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i className="devicon-github-original github-icon"> </i>
+              <i className="devicon-github-original github-icon"></i>
               GitHub
             </a>
+
             <a
               href="https://linkedin.com/in/nabis-shrestha-268114288"
               target="_blank"
               rel="noreferrer"
             >
-              <i className="devicon-linkedin-plain colored"> </i>
+              <i className="devicon-linkedin-plain colored"></i>
               LinkedIn
+            </a>
+
+            <a
+              href={process.env.PUBLIC_URL + "/resume.pdf"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-solid fa-file-lines"></i>
+              Resume
             </a>
           </div>
         </div>

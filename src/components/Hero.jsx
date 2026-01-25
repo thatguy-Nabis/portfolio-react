@@ -32,7 +32,7 @@ const Hero = () => {
 
         {/* Right side */}
         <div className="hero-image">
-          <img src="/profile.jpg" alt="Nabis Shrestha" />
+          <img src="profile.jpg" alt="Nabis Shrestha" />
         </div>
       </div>
     </section>

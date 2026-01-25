@@ -1,0 +1,51 @@
+:root {
+  /* Backgrounds */
+  --bg-main: #0f172a; /* deep slate */
+  --bg-card: #111827; /* card surface */
+
+  /* Text */
+  --text-primary: #e5e7eb; /* off-white */
+  --text-secondary: #9ca3af;
+
+  /* Borders */
+  --border-light: #1f2937;
+
+  /* Accent */
+  --accent: #3b82f6; /* professional blue */
+  --accent-soft: rgba(59, 130, 246, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  line-height: 1.6;
+}
+
+.main {
+  scroll-snap-type: y proximity;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}

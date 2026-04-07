@@ -7,9 +7,9 @@ const projects = [
       "A two-player chess game built in Java with MySQL for user management and match persistence.",
     tech: ["Java", "MySQL"],
     images: [
-      "/projects/chess-arena.png",
       "/projects/chess-arena-1.png",
-      "/projects/chess-arena-2.png",
+      "/projects/chess-arena-1.png",
+      "/projects/chess-arena-3.png",
     ],
   },
   {
@@ -17,14 +17,24 @@ const projects = [
     description:
       "An intelligent image editor using machine learning for image processing and optimization.",
     tech: ["React", "PHP", "MySQL", "Python", "ML"],
-    images: [],
+    images: ["/projects/zipit-1.png",
+            "/projects/zipit-2.png",
+            "/projects/zipit-3.png",
+            "/projects/zipit-4.png",
+            "/projects/zipit-5.png",
+            "/projects/zipit-6.png",
+    ],
   },
   {
     title: "Kriativity",
     description:
       "An online art gallery platform with a recommendation algorithm to personalize content.",
     tech: ["PHP", "MySQL"],
-    images: [],
+    images: [
+            "/projects/kriativity-1.png",
+            "/projects/kriativity-2.png",
+            "/projects/kriativity-3.png",
+    ],
   },
 ];
 
@@ -36,6 +46,9 @@ const techIcons = {
   Python: "devicon-python-plain colored",
   ML: "devicon-tensorflow-original colored",
 };
+
+const getProjectImageSrc = (imagePath) =>
+  `${process.env.PUBLIC_URL}${imagePath}`;
 
 const Projects = () => {
   const [activeSlides, setActiveSlides] = useState(() =>
@@ -89,18 +102,12 @@ const Projects = () => {
             <div className="project-image">
               {project.images.length > 0 ? (
                 <div className="project-slides">
-                  {project.images.map((image, imageIndex) => (
-                    <img
-                      key={image}
-                      src={image}
-                      alt={`${project.title} preview ${imageIndex + 1}`}
-                      className={
-                        activeSlides[index] === imageIndex
-                          ? "project-slide active"
-                          : "project-slide"
-                      }
-                    />
-                  ))}
+                  <img
+                    key={project.images[activeSlides[index]]}
+                    src={getProjectImageSrc(project.images[activeSlides[index]])}
+                    alt={`${project.title} preview ${activeSlides[index] + 1}`}
+                    className="project-slide"
+                  />
                 </div>
               ) : (
                 <div className="project-image-placeholder">

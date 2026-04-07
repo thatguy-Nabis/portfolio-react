@@ -40,16 +40,111 @@
   background: var(--bg-card);
 }
 
-.project-image img {
+.project-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.project-slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
 
-  transition: transform 0.6s ease;
+  transition: opacity 0.7s ease, transform 0.6s ease;
 }
 
-.project-card:hover .project-image img {
+.project-slide.active {
+  opacity: 1;
+}
+
+.project-image-placeholder {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.project-image-placeholder span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-image-placeholder p {
+  margin: 0;
+  max-width: 24rem;
+  line-height: 1.6;
+}
+
+.project-card:hover .project-slide.active {
   transform: scale(1.05);
+}
+
+.project-slide-button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(11, 18, 32, 0.68);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.project-slide-button:hover {
+  background: rgba(11, 18, 32, 0.88);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.project-slide-button.previous {
+  left: 1rem;
+}
+
+.project-slide-button.next {
+  right: 1rem;
+}
+
+.project-slide-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 1.2rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+
+.project-slide-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.project-slide-dot.active {
+  background: #fff;
+  transform: scale(1.15);
 }
 
 /* Soft gradient mask */
@@ -57,6 +152,7 @@
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.45),
@@ -140,6 +236,12 @@
 
   .project-image {
     height: 260px;
+  }
+
+  .project-slide-button {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
   }
 
   .project-body {
